@@ -134,6 +134,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+.row.flip {
+  flex-direction: row-reverse;
+}
 .col.right {
 }
 .col.left {

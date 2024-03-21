@@ -35,8 +35,32 @@
     </div>
   </div>
 </body>
+<!-- assigns variable "aboutData" -->
+<script src="data/aboutData.js"></script>
 <script>
+  let contentArea = document.getElementById("contentArea")
+  contentArea.innerHTML = ""
+  for (let x = 0; x < aboutData.length; x++) {
+    let { image, title, text } = aboutData[x]
+    let flip = x % 2 === 1 ? "flip" : ""
+    let content = `
+      <div class="row ${flip}">
+        <div class="col left">
+          <img src="images/${image}" alt="">
 
+        </div>
+        <div class="col right">
+          <p>
+            <h3>
+              ${title}
+            </h3>
+            ${text}
+          </p>
+        </div>
+      </div>
+    `
+    contentArea.innerHTML += content
+  }
 </script>
 <script src="addMenu.js"></script>
 

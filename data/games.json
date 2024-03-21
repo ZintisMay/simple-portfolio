@@ -1,0 +1,136 @@
+{
+	"cavePaintings":{
+		"name":"Cave Paintings",
+		"amazonLink":"",
+		"companySaleLink":"https://rnrgames.com/cave-paintings",
+		"youtubeVideoLink":"https://www.youtube.com/watch?v=9iBpWkupsWc",
+		"BGGpageLink":"https://boardgamegeek.com/boardgame/255712/cave-paintings",
+		"linkURL":"/CP",
+		"abbreviation":"CP",
+		"description":"Draw poorly? No matter! Cave Paintings is a drawing game where drawing poorly is the best way to play! Players have a minute to make their cave paintings, before guessing each other's.",
+		"image":"CP.png",
+		"images":[
+			{ "path":"","details":"" },
+			{ "path":"","details":"" },
+			{ "path":"","details":"" }
+		],
+		"assortedImageURLs":""
+	},
+	"z4x":{
+		"name":"Sector Z4X",
+		"amazonLink":"",
+		"companySaleLink":"",
+		"youtubeVideoLink":"https://youtu.be/anlTpMSCmxk",
+		"BGGpageLink":"",
+		"linkURL":"/Z4X",
+		"abbreviation":"Z4X",
+		"description":"Take to the stars in this 4X space opera. Sector Z4X aims to be the most 4X board game, using streamlined euro mechanics to deliver a sci-fi civilization building experience.",
+		"image":"Z4X.png",
+		"images":[
+			{ "path":"","details":"" },
+			{ "path":"","details":"" },
+			{ "path":"","details":"" }
+		],
+		"assortedImageURLs":""
+	},
+	"wiseGuysAndLies":{
+		"name":"Wise Guys and Lies",
+		"amazonLink":"",
+		"companySaleLink":"",
+		"youtubeVideoLink":"https://youtu.be/UAUDUzu2ybQ",
+		"BGGpageLink":"",
+		"linkURL":"/WGAL",
+		"abbreviation":"WGAL",
+		"description":"Do you have what it takes to be the most devious crime boss in town? A take that card game of player politics, Wise Guys and Lies is a game where nobody believes the truth. Formerly named \"Be Honest\"",
+		"image":"WGAL.png",
+		"images":[
+			{ "path":"","details":"" },
+			{ "path":"","details":"" },
+			{ "path":"","details":"" }
+		],
+		"assortedImageURLs":""
+	},
+	"huts":{
+		"name":"Huts",
+		"amazonLink":"",
+		"companySaleLink":"",
+		"youtubeVideoLink":"",
+		"BGGpageLink":"",
+		"linkURL":"/HUTS",
+		"description":"A game about small islands and angry gods. In Huts, you are a tribal god, petty and cruel. You send omens, miracles and disasters to the different tribes, to have only the ones who worship you remaining.",
+		"image":"HUTS.png",
+		"images":[
+			{ "path":"","details":"" },
+			{ "path":"","details":"" },
+			{ "path":"","details":"" }
+		],
+		"assortedImageURLs":""
+	},
+	"beliefInTheOldGods":{
+		"name":"Belief in the Old Gods",
+		"amazonLink":"",
+		"companySaleLink":"",
+		"youtubeVideoLink":"",
+		"BGGpageLink":"",
+		"linkURL":"/BITOG",
+		"abbreviation":"BITOG",
+		"description":"The Great Old Ones are forgotton monsters, sleeping in space, under the earth, at the bottom of the sea. Inspired by the works of HP Lovecraft, play as those unspeakable horrors behind the veil, manipulating cultists to carry out your wishes.",
+		"image":"BITOG.png",
+		"images":[
+			{ "path":"","details":"" },
+			{ "path":"","details":"" },
+			{ "path":"","details":"" }
+		],
+		"assortedImageURLs":""
+	},
+	"draftBeer":{
+		"name":"Draft Beer",
+		"amazonLink":"",
+		"companySaleLink":"",
+		"youtubeVideoLink":"https://youtu.be/TBF-ou-G1Yc",
+		"BGGpageLink":"https://boardgamegeek.com/boardgame/297367/draft-beer",
+		"linkURL":"/DB",
+		"abbreviation":"DB",
+		"description":"You've fulfilled you lifelong dream, to open a bar! But you find that all your friends have also opened bars, in the same town even! So stock your bars in this quick to learn, hard to master, pick ans pass card drafting game.",
+		"image":"DB.png",
+		"images":[
+			{ "path":"","details":"" },
+			{ "path":"","details":"" },
+			{ "path":"","details":"" }
+		],
+		"assortedImageURLs":""
+	},
+	"flowerShop":{
+		"name":"Flower Shop",
+		"amazonLink":"",
+		"companySaleLink":"",
+		"youtubeVideoLink":"https://youtu.be/b5eSvVd-_u8",
+		"BGGpageLink":"",
+		"linkURL":"/FS",
+		"abbreviation":"FS",
+		"description":"Take a stroll through a greenhouse to make the most beautiful bouquets for you clients. Flower Shop is a easy to learn card game that uses clear cards to create floral arrangements.",
+		"image":"FS.png",
+		"images":[
+			{ "path":"","details":"" },
+			{ "path":"","details":"" },
+			{ "path":"","details":"" }
+		],
+		"assortedImageURLs":""
+	},
+	"drawingLots":{
+		"name":"Drawing Lots",
+		"amazonLink":"",
+		"companySaleLink":"",
+		"youtubeVideoLink":"",
+		"BGGpageLink":"",
+		"linkURL":"/DL",
+		"description":"Drawing Lots is a \"Flip and Write\" style game. Players bid money in order to gain blueprints or empty lots on the grid. With the right combinations of lots and blueprints, they can develop the town into a sprawling city.",
+		"image":"DL.png",
+		"images":[
+			{ "path":"","details":"" },
+			{ "path":"","details":"" },
+			{ "path":"","details":"" }
+		],
+		"assortedImageURLs":""
+	}
+}
