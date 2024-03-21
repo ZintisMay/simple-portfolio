@@ -59,7 +59,7 @@ let aboutData = [
   },
   {
     image: "careers-20191203-iqb.png",
-    title: "Front-End Lead Developer",
+    title: "Front-End Team Lead",
     text: [
       "RCSB came out of nowhere to give me an opportunity as the Lead Developer of a small front-end team. I got to work, learn and grow around some really brilliant people, and to improve my managerial expertise. Unfortunately the academic work environment doesn't suit my style and I had to move on.",
     ],

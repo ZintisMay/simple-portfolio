@@ -5,6 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="robotoFont.css">
+  <link rel="stylesheet" href="robotoFont.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="index.css">
   <style>
     body {
@@ -23,9 +30,9 @@
 </body>
 <script>
 
-  let triangleArray = createShapes(10)
+  let blueSquareArray = createShapes(10)
   let shapeHolder = document.getElementById("shapeHolder")
-  triangleArray.forEach(tri => {
+  blueSquareArray.forEach(tri => {
     shapeHolder.appendChild(tri)
   })
 
@@ -46,10 +53,10 @@
     return numToReturn;
   }
 
-  function makeRandomTriangle(i, topBottom, distanceFromTB, leftRight, distanceFromLR) {
+  function makeRandomblueSquare(i, topBottom, distanceFromTB, leftRight, distanceFromLR) {
     var heightWidth = rand(10, 20);
     let tri = document.createElement("div")
-    tri.classList.add("triangle")
+    tri.classList.add("blueSquare")
     tri.style.zIndex = 0
     if (topBottom) tri.style[topBottom] = rand(distanceFromTB.lo, distanceFromTB.hi) + "%"
     if (leftRight) tri.style[leftRight] = rand(distanceFromLR.lo, distanceFromLR.hi) + "%"
@@ -62,24 +69,24 @@
 
   function createShapes(amount) {
     //Version 1 sides
-    var triangleArray = []
+    var blueSquareArray = []
     // left
     for (var x = 0; x < amount; x++) {
-      triangleArray.push(makeRandomTriangle(x, "top", { lo: -5, hi: 105 }, "left", { lo: -3, hi: 3 }))
+      blueSquareArray.push(makeRandomblueSquare(x, "top", { lo: -5, hi: 105 }, "left", { lo: -3, hi: 3 }))
     }
     // right
     for (var y = 0; y < amount; y++) {
-      triangleArray.push(makeRandomTriangle(x, "top", { lo: -5, hi: 105 }, "left", { lo: 97, hi: 103 }))
+      blueSquareArray.push(makeRandomblueSquare(x, "top", { lo: -5, hi: 105 }, "left", { lo: 97, hi: 103 }))
     }
     // top
     for (var z = 0; z < amount; z++) {
-      triangleArray.push(makeRandomTriangle(x, "top", { lo: -3, hi: 3 }, "left", { lo: -5, hi: 105 }))
+      blueSquareArray.push(makeRandomblueSquare(x, "top", { lo: -3, hi: 3 }, "left", { lo: -5, hi: 105 }))
     }
     // bottom
     for (var q = 0; q < amount; q++) {
-      triangleArray.push(makeRandomTriangle(x, "top", { lo: 97, hi: 103 }, "left", { lo: -5, hi: 105 }))
+      blueSquareArray.push(makeRandomblueSquare(x, "top", { lo: 97, hi: 103 }, "left", { lo: -5, hi: 105 }))
     }
-    return triangleArray
+    return blueSquareArray
   }
 
 

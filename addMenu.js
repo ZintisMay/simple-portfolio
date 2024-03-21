@@ -1,40 +1,39 @@
 let pages = ["contact", "games", "work", "about"];
 
 let menuStyles = {};
-let homeStyles = {
-  position: "fixed",
-  top: "10px",
-  left: "20px",
-  height: "45px",
-  width: "45px",
-  "background-image": "URL(images/fancyZ.png)",
-  "background-size": "contain",
-  "background-position": "center",
-};
-let barStyles = {
-  height: "1px",
-  "background-color": "black",
-};
+// let homeStyles = {
+//   position: "fixed",
+//   top: "10px",
+//   left: "20px",
+//   height: "45px",
+//   width: "45px",
+//   "background-image": "URL(images/fancyZ.png)",
+//   "background-size": "contain",
+//   "background-position": "center",
+// };
+let barStyles = {};
 
-buildMenu();
+buildMenu(document.body);
 applyListeners();
 
-function buildMenu() {
+function buildMenu(buildTarget) {
   let menuDiv = document.createElement("div");
   menuDiv.id = "menuDiv";
   menuDiv.classList.add("menuDiv");
   repeat(() => {
     let bar = document.createElement("div");
-    applyStyles(bar, barStyles);
+    // applyStyles(bar, barStyles);
+    bar.classList.add("blackBar");
     menuDiv.appendChild(bar);
   }, 3);
-  document.body.appendChild(menuDiv);
+  buildTarget.appendChild(menuDiv);
 
   let homeDiv = document.createElement("a");
   homeDiv.href = "home.html";
   homeDiv.id = "homeDiv";
-  applyStyles(homeDiv, homeStyles);
-  document.body.appendChild(homeDiv);
+  homeDiv.classList.add("homeButton");
+  // applyStyles(homeDiv, homeStyles);
+  buildTarget.appendChild(homeDiv);
 
   let menuBar = document.createElement("div");
   menuBar.id = "menuBar";
@@ -50,7 +49,7 @@ function buildMenu() {
     menuBar.appendChild(link);
   }, pages.length);
   // applyStyles(menuBar, menuBarStyles);
-  document.body.appendChild(menuBar);
+  buildTarget.appendChild(menuBar);
 }
 
 function repeat(func, x = 0) {

@@ -69,7 +69,7 @@ let workData = [
     image: "takedaCT.png",
     linkURL: "",
     description:
-      "For TCT I took point in implementing UI and UX improvements, and polishing the functionality of a fairly complex search page.I also created a number of prototype UI experiments proposed by the client.",
+      "For TCT I worked on implementing UI and UX improvements, and polishing the functionality of a fairly complex search page.I also created a number of prototype UI experiments proposed by the client.",
   },
   {
     name: "Community.Atlassian.Com",
