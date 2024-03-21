@@ -1,8 +1,13 @@
+html {
+  font-size: 24px;
+}
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  overflow: hidden;
+  padding: 90px 50px 0 50px;
+  min-height: calc(100vh - 90px);
+  overflow: auto;
+  background-color: #efb678;
 }
 .fancyZ {
   height: 75px;
@@ -59,13 +64,25 @@ body {
 .menuBar {
   position: fixed;
   bottom: 100%;
+  left: 90px;
   transition: 1s;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 70px;
-  width: calc(100% - 90px);
-  background-color: red;
+  width: calc(100% - 90px - 90px);
+  background-color: #efb678;
+}
+.menuDiv {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 30px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 }
 .menuBar a {
   height: 50px;
@@ -94,5 +111,44 @@ body {
   }
   .menuBarVisible {
     transform: translateX(-100%);
+  }
+}
+
+/* //home */
+.row {
+  margin: auto;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+.col {
+  min-height: 300px;
+  width: 48%;
+  min-width: 300px;
+  /* outline: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.col.right {
+}
+.col.left {
+}
+.col img {
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 750px) {
+  .row {
+    justify-content: center;
+  }
+  .col {
+    width: 100%;
+    justify-content: flex-start;
   }
 }

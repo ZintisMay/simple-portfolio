@@ -1,31 +1,20 @@
-let pages = ["contact", "games", "work", "about", "home"];
+let pages = ["contact", "games", "work", "about"];
 
-let menuStyles = {
+let menuStyles = {};
+let homeStyles = {
   position: "fixed",
-  top: "20px",
-  right: "20px",
-  height: "30px",
-  width: "50px",
-  // "background-color": "red",
-  display: "flex",
-  "flex-direction": "column",
-  "justify-content": "space-between",
+  top: "10px",
+  left: "20px",
+  height: "45px",
+  width: "45px",
+  "background-image": "URL(images/fancyZ.png)",
+  "background-size": "contain",
+  "background-position": "center",
 };
 let barStyles = {
   height: "1px",
   "background-color": "black",
 };
-// let menuBarStyles = {
-//   position: "fixed",
-//   bottom: "100%",
-//   transition: "1s",
-//   display: "flex",
-//   "justify-content": "space-around",
-//   "align-items": "center",
-//   height: "70px",
-//   width: "100%",
-//   "background-color": "red",
-// };
 
 buildMenu();
 applyListeners();
@@ -33,13 +22,19 @@ applyListeners();
 function buildMenu() {
   let menuDiv = document.createElement("div");
   menuDiv.id = "menuDiv";
+  menuDiv.classList.add("menuDiv");
   repeat(() => {
     let bar = document.createElement("div");
     applyStyles(bar, barStyles);
     menuDiv.appendChild(bar);
   }, 3);
-  applyStyles(menuDiv, menuStyles);
   document.body.appendChild(menuDiv);
+
+  let homeDiv = document.createElement("a");
+  homeDiv.href = "home.html";
+  homeDiv.id = "homeDiv";
+  applyStyles(homeDiv, homeStyles);
+  document.body.appendChild(homeDiv);
 
   let menuBar = document.createElement("div");
   menuBar.id = "menuBar";
@@ -58,10 +53,10 @@ function buildMenu() {
   document.body.appendChild(menuBar);
 }
 
-function repeat(f, c = 0) {
-  while (c > 0) {
-    f(c);
-    c--;
+function repeat(func, x = 0) {
+  while (x > 0) {
+    func(x);
+    x--;
   }
 }
 
@@ -74,7 +69,7 @@ function applyStyles(target, styles) {
 function applyListeners() {
   let target = document.getElementById("menuBar");
   menuDiv.addEventListener("click", function (e) {
-    console.log("click");
+    // console.log("click");
     target.classList.toggle("menuBarVisible");
   });
 }
