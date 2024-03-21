@@ -40,14 +40,28 @@ let aboutData = [
     image: "CP1.jpg",
     title: "Game Designer",
     text: [
-      "Around 2012 I took a casual interest in game design and started studying it. I also began learning programming thinking one day I would put them together and make a digital game. So far that hasn't been the case! I've enjoyed the fast iteration of paper prototypes, so that's what I've been doing!",
+      "Around 2012 I took a casual interest in game design and started practicing it. I also began learning programming thinking one day I would put them together and make a digital game. So far that hasn't been the case! I've enjoyed the fast iteration of paper prototypes, so that's what I've been doing. It's a fun hobby, and lets me practice graphic design.",
     ],
   },
   {
     image: "devx-screen-shot.png",
     title: "Teacher, Tutor",
     text: [
-      "Over the pandemic many people found out new hobbies, well I found a new job, teaching! I've worked with hundreds of students in classrooms and one-on-one. It's been really gratifying getting a chance to work with people who are just starting their programming journey, just like I was some 5-6 years ago.",
+      "Over the pandemic many people found out new hobbies, well I found a new job, teaching! I've worked with hundreds of students in classrooms and one-on-one. It's been really gratifying getting a chance to work with people who are just starting their programming journey, just like I was some years ago.",
+    ],
+  },
+  {
+    image: "atlassianA.jfif",
+    title: "Atlassian",
+    text: [
+      "During the pandemic I got picked up by the Community team, managing community.atlassian.com. This was the highest-traffic site I had worked on up until this point, and my colleagues were fantastic. I learned a lot working in a larger tech company that I didn't see as much with UHC and Thorium. Being on a small team I also got to wear multiple hats, which is fun for me.",
+    ],
+  },
+  {
+    image: "careers-20191203-iqb.png",
+    title: "Front-End Lead Developer",
+    text: [
+      "RCSB came out of nowhere to give me an opportunity as the Lead Developer of a small front-end team. I got to work, learn and grow around some really brilliant people, and to improve my managerial expertise. Unfortunately the academic work environment doesn't suit my style and I had to move on.",
     ],
   },
 ];
