@@ -34,19 +34,6 @@
 </script>
 <script>
 
-  let blueSquareWithContent = document.querySelectorAll(".contentArea .blueSquare")
-  // alert(blueSquareWithContent.length)
-  for (let x = 0; x < blueSquareWithContent.length; x++) {
-    let target = blueSquareWithContent[x]
-    target.position = "absolute"
-    target.style.top = `calc(40% + ${x * 50}px)`
-    if (x % 2 === 1) {
-      target.style.margin = "0 calc(50% + 150px)"
-    } else {
-      target.style.margin = "0 calc(50% - 150px)"
-    }
-  }
-
   let blueSquareArray = createShapes(10)
   let contentArea = document.getElementById("contentArea")
   blueSquareArray.forEach(tri => {

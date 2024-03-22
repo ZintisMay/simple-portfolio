@@ -29,6 +29,11 @@
 
 </body>
 <script>
+  document.body.addEventListener("click", function () {
+    window.location = "home.html"
+  })
+</script>
+<script>
 
   let blueSquareArray = createShapes(10)
   let shapeHolder = document.getElementById("shapeHolder")
@@ -54,14 +59,14 @@
   }
 
   function makeRandomblueSquare(i, topBottom, distanceFromTB, leftRight, distanceFromLR) {
-    var heightWidth = rand(10, 20);
+    var heightWidth = rand(75, 150);
     let tri = document.createElement("div")
     tri.classList.add("blueSquare")
     tri.style.zIndex = 0
     if (topBottom) tri.style[topBottom] = rand(distanceFromTB.lo, distanceFromTB.hi) + "%"
     if (leftRight) tri.style[leftRight] = rand(distanceFromLR.lo, distanceFromLR.hi) + "%"
-    tri.style.height = heightWidth + "vw"
-    tri.style.width = heightWidth + "vw"
+    tri.style.height = heightWidth + "px"
+    tri.style.width = heightWidth + "px"
     tri.style.opacity = weightedRand(10, 70, false, 3) / 100
 
     return tri
