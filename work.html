@@ -18,22 +18,11 @@
   <div class="contentArea" id="contentArea">
 
     <div class="row">
-      <div class="col left">
-        <img src="images/zintisHoodie.jpg" alt="">
-      </div>
-      <div class="col right">
-        <p>Hi, my name is Zintis.<br>I'm a programmer,<br>game designer,<br>teacher,<br>tutor,<br>and mentor</p>
-      </div>
-    </div>
-
-
-    <div class="row">
-      <div class="col left">
-        <img src="images/zintisHoodie.jpg" alt="">
-      </div>
-      <div class="col right">
-        <p>Hi, my name is Zintis.<br>I'm a programmer,<br>game designer,<br>teacher,<br>tutor,<br>and mentor</p>
-      </div>
+      <h1 class="headerText">Work Experience</h1>
+      <p>Some years ago a friend of mine forgot what kind of work I did, and mentioned "well, I always thought you were
+        a programmer". And... that stuck with me. Enough to start studying it in 2016, and switch careers by
+        2017.It's been a gratifying journey (and a neverending one). It scratches my itches for challenge, creativity,
+        and problem solving.<br><br>Here's a selection of websites that I've worked on over the years!</p>
     </div>
 
   </div>
@@ -42,7 +31,6 @@
 <script src="data/workData.js"></script>
 <script>
   let contentArea = document.getElementById("contentArea")
-  contentArea.innerHTML = ""
   for (let x = 0; x < workData.length; x++) {
     let job = workData[x]
     let content = `
@@ -55,7 +43,7 @@
         <div class="col right">
           <p>
             <h3>
-              <a href="${job.linkURL}">${job.properName} (${job.year})</a>
+              <a href="${job.linkURL}">${job.properName} - ${job.year}</a>
             </h3>
             ${job.description}
           </p>
@@ -66,5 +54,78 @@
   }
 </script>
 <script src="addMenu.js"></script>
+<script>
+
+  let blueSquareWithContent = document.querySelectorAll(".contentArea .blueSquare")
+  // alert(blueSquareWithContent.length)
+  for (let x = 0; x < blueSquareWithContent.length; x++) {
+    let target = blueSquareWithContent[x]
+    target.position = "absolute"
+    target.style.top = `calc(40% + ${x * 50}px)`
+    if (x % 2 === 1) {
+      target.style.margin = "0 calc(50% + 150px)"
+    } else {
+      target.style.margin = "0 calc(50% - 150px)"
+    }
+  }
+
+  let blueSquareArray = createShapes(10)
+  blueSquareArray.forEach(tri => {
+    contentArea.appendChild(tri)
+  })
+
+  function rand(min, max) {
+    return min + Math.floor(Math.random() * Math.floor(max - min + 1));
+  }
+
+  function weightedRand(min, max, goHi, iterations) {
+    var numToReturn = max;
+    for (var k = 0; k < iterations; k++) {
+      var randomNumber = rand(min, max);
+      if (goHi && randomNumber > numToReturn) {
+        numToReturn = randomNumber
+      } else if (!goHi && randomNumber < numToReturn) {
+        numToReturn = randomNumber
+      }
+    }
+    return numToReturn;
+  }
+
+  function makeRandomBlueSquare(i, distanceFromTB, distanceFromLR) {
+    var heightWidth = rand(50, 100);
+    let tri = document.createElement("div")
+    tri.classList.add("blueSquare")
+    tri.style.zIndex = 0
+    tri.style.top = rand(distanceFromTB.lo, distanceFromTB.hi) + "%"
+    tri.style.left = rand(distanceFromLR.lo, distanceFromLR.hi) + "%"
+    tri.style.height = heightWidth + "px"
+    tri.style.width = heightWidth + "px"
+    tri.style.opacity = weightedRand(10, 70, false, 3) / 100
+
+    return tri
+  }
+
+  function createShapes(amount) {
+    //Version 1 sides
+    var blueSquareArray = []
+    // left
+    for (var x = 0; x < amount; x++) {
+      blueSquareArray.push(makeRandomBlueSquare(x, { lo: 15, hi: 100 }, { lo: -5, hi: 0 }))
+    }
+    // right
+    for (var y = 0; y < amount; y++) {
+      blueSquareArray.push(makeRandomBlueSquare(x, { lo: 15, hi: 100 }, { lo: 100, hi: 105 }))
+    }
+    // // top
+    // for (var z = 0; z < amount; z++) {
+    //   blueSquareArray.push(makeRandomBlueSquare(x, { lo: -3, hi: 5 }, { lo: 10, hi: 90 }))
+    // }
+    // // bottom
+    // for (var q = 0; q < amount; q++) {
+    //   blueSquareArray.push(makeRandomBlueSquare(x, { lo: 97, hi: 103 }, { lo: -10, hi: 100 }))
+    // }
+    return blueSquareArray
+  }
+</script>
 
 </html>

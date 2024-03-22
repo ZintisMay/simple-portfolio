@@ -1,8 +1,33 @@
 html {
   font-size: 24px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 300;
 }
+.headerText {
+  text-align: center;
+  width: 100%;
+}
+.centerText {
+  text-align: center;
+}
+.contact .row {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.captionText {
+  position: relative;
+  height: 0;
+  bottom: 2.5rem;
+  z-index: 100;
+  color: white;
+  text-shadow: 2px 2px 0px black;
+  text-align: center;
+  width: 100%;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -17,7 +42,7 @@ body {
   width: 75px;
   background-position: center;
   background-size: contain;
-  background-image: url(/images/fancyZ.png);
+  background-image: url(images/fancyZ.png);
 }
 .fixedCenter {
   position: fixed;
@@ -180,6 +205,7 @@ body {
 @media (max-width: 750px) {
   .row {
     justify-content: center;
+    flex-direction: column-reverse !important;
   }
   .col {
     width: 100%;

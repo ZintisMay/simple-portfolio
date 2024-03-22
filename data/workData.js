@@ -87,7 +87,8 @@ let workData = [
     name: "RCSB.org",
     year: 2021,
     websiteFullURL: "https://www.rcsb.org/",
-    properName: "Research Collaboratory for Structural Bioinformatics",
+    properName:
+      "Research Collaboratory for Structural Bioinformatics (RCSB.org)",
     text: "",
     imageURL: "",
     image: "RCSB.png",

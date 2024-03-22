@@ -16,35 +16,103 @@
 
 
 <body class="contact">
-  <div class="contentArea" id="contentArea"></div>
+  <div class="contentArea" id="contentArea">
+
+    <div class="row">
+      <h1 class="headerText">Contact Me</h1>
+      <p>Please feel free to reach out to me.</p>
+      <p>Work, game design, old friends, whomever, my inbox is open.</p>
+      <p>Find me on
+        <a href="https://www.linkedin.com/in/zintis-may-krumins-12025b84/" class="socialLink linkedIn">LinkedIn</a> and
+        <a href="https://twitter.com/ZintisMay">Twitter</a>
+
+        or use this little form below:
+      </p>
+
+    </div>
+    <div class="row"> <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdE6VVrGLX6h7_jhTcvVSd8BlMTI1HvFXFYlvFWHr0JdR1ajg/viewform?embedded=true"
+        style="margin:0 auto;" width="640" height="1000" frameborder="0" marginheight="0"
+        marginwidth="0">Loading…</iframe></div>
+
+  </div>
 </body>
 <!-- assigns variable "workData" -->
 <script src="data/contactData.js"></script>
+
+<script src="addMenu.js"></script>
 <script>
-  let contentArea = document.getElementById("contentArea")
-  contentArea.innerHTML = ""
-  for (let x = 0; x < contactData.length; x++) {
-    let job = contactData[x]
-    let content = `
-      <div class="row">
-        <div class="col left">
-          <a href="${job.linkURL}">
-          <img src="images/${job.image}" alt="">
-        </a>
-        </div>
-        <div class="col right">
-          <p>
-            <h3>
-              <a href="${job.linkURL}">${job.properName} (${job.year})</a>
-            </h3>
-            ${job.description}
-          </p>
-        </div>
-      </div>
-    `
-    contentArea.innerHTML += content
+
+  let blueSquareWithContent = document.querySelectorAll(".contentArea .blueSquare")
+  // alert(blueSquareWithContent.length)
+  for (let x = 0; x < blueSquareWithContent.length; x++) {
+    let target = blueSquareWithContent[x]
+    target.position = "absolute"
+    target.style.top = `calc(40% + ${x * 50}px)`
+    if (x % 2 === 1) {
+      target.style.margin = "0 calc(50% + 150px)"
+    } else {
+      target.style.margin = "0 calc(50% - 150px)"
+    }
+  }
+
+  let blueSquareArray = createShapes(10)
+  blueSquareArray.forEach(tri => {
+    contentArea.appendChild(tri)
+  })
+
+  function rand(min, max) {
+    return min + Math.floor(Math.random() * Math.floor(max - min + 1));
+  }
+
+  function weightedRand(min, max, goHi, iterations) {
+    var numToReturn = max;
+    for (var k = 0; k < iterations; k++) {
+      var randomNumber = rand(min, max);
+      if (goHi && randomNumber > numToReturn) {
+        numToReturn = randomNumber
+      } else if (!goHi && randomNumber < numToReturn) {
+        numToReturn = randomNumber
+      }
+    }
+    return numToReturn;
+  }
+
+  function makeRandomBlueSquare(i, distanceFromTB, distanceFromLR) {
+    var heightWidth = rand(50, 100);
+    let tri = document.createElement("div")
+    tri.classList.add("blueSquare")
+    tri.style.zIndex = 0
+    tri.style.top = rand(distanceFromTB.lo, distanceFromTB.hi) + "%"
+    tri.style.left = rand(distanceFromLR.lo, distanceFromLR.hi) + "%"
+    tri.style.height = heightWidth + "px"
+    tri.style.width = heightWidth + "px"
+    tri.style.opacity = weightedRand(10, 70, false, 3) / 100
+
+    return tri
+  }
+
+  function createShapes(amount) {
+    //Version 1 sides
+    var blueSquareArray = []
+    // left
+    for (var x = 0; x < amount; x++) {
+      blueSquareArray.push(makeRandomBlueSquare(x, { lo: 15, hi: 100 }, { lo: -5, hi: 0 }))
+    }
+    // right
+    for (var y = 0; y < amount; y++) {
+      blueSquareArray.push(makeRandomBlueSquare(x, { lo: 15, hi: 100 }, { lo: 100, hi: 105 }))
+    }
+    // // top
+    // for (var z = 0; z < amount; z++) {
+    //   blueSquareArray.push(makeRandomBlueSquare(x, { lo: -3, hi: 5 }, { lo: 10, hi: 90 }))
+    // }
+    // // bottom
+    // for (var q = 0; q < amount; q++) {
+    //   blueSquareArray.push(makeRandomBlueSquare(x, { lo: 97, hi: 103 }, { lo: -10, hi: 100 }))
+    // }
+    return blueSquareArray
   }
 </script>
-<script src="addMenu.js"></script>
 
 </html>

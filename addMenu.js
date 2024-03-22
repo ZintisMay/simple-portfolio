@@ -43,7 +43,7 @@ function buildMenu(buildTarget) {
     let link = document.createElement("a");
     link.href = `${page}.html`;
     link.innerHTML = `
-      <img src="/images/${page}.png" />
+      <img src="images/${page}.png" />
       <span>${page.toUpperCase()}</span>
     `;
     menuBar.appendChild(link);
