@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="robotoFont.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="work">
+  <div class="contentArea" id="contentArea">
+    <h1 class="headerText">Teaching</h1>
+
+    <div class="row">
+      <p>Ever since I started down my programming path, people have noted that I seem to have the right stuff to be a
+        teacher. Patience, empathy, and a real concern for everyone I'm working with. In the last few years I've been
+        working with students much more, and feel like I have come into my own as a Teacher/Tutor/Mentor. Although not
+        through traditional (college curriculum) routes, at this point I have many thousands of hours working with
+        students and in classrooms (albeit online).</p>
+    </div>
+
+  </div>
+</body>
+<!-- assigns variable "teachingData" -->
+<script src="data/teachingData.js"></script>
+<script>
+  teachingData.sort((a, b) => a.year - b.year)
+  let contentArea = document.getElementById("contentArea")
+  for (let x = 0; x < teachingData.length; x++) {
+    let job = teachingData[x]
+    let content = `
+      <div class="row">
+        <div class="col left">
+          <a ${job.linkURL ? `href="${job.linkURL}"` : ""}>
+          <img src="images/${job.image}" alt="">
+        </a>
+        </div>
+        <div class="col right">
+          <p>
+            <h3>
+              <a ${job.linkURL ? `href="${job.linkURL}"` : ""}>${job.properName} - ${job.year}</a>
+            </h3>
+            ${job.description}
+          </p>
+        </div>
+      </div>
+    `
+    contentArea.innerHTML += content
+  }
+</script>
+<script src="addMenu.js"></script>
+
+</html>

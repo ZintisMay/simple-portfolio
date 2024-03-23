@@ -1,5 +1,5 @@
-let pages = ["contact", "games", "work", "about"];
-
+// let pages = ["contact", "games", "work", "teaching", "about"];
+let pages = ["about", "work", "teaching", "games", "contact"];
 let menuStyles = {};
 // let homeStyles = {
 //   position: "fixed",
@@ -53,9 +53,10 @@ function buildMenu(buildTarget) {
 }
 
 function repeat(func, x = 0) {
-  while (x > 0) {
-    func(x);
-    x--;
+  let count = 1;
+  while (count <= x) {
+    func(count);
+    count++;
   }
 }
 
