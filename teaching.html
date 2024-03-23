@@ -36,20 +36,16 @@
   for (let x = 0; x < teachingData.length; x++) {
     let job = teachingData[x]
     let content = `
-      <div class="row">
-        <div class="col left">
+      <div class="floatRow">
           <a ${job.linkURL ? `href="${job.linkURL}"` : ""}>
           <img src="images/${job.image}" alt="">
         </a>
-        </div>
-        <div class="col right">
           <p>
             <h3>
               <a ${job.linkURL ? `href="${job.linkURL}"` : ""}>${job.properName} - ${job.year}</a>
             </h3>
             ${job.description}
           </p>
-        </div>
       </div>
     `
     contentArea.innerHTML += content

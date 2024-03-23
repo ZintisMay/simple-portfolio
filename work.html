@@ -22,7 +22,8 @@
       <p>Some years ago a friend of mine forgot what kind of work I did, and mentioned "well, I always thought you were
         a programmer". And... that stuck with me. Enough to start studying it in 2016, and switch careers by
         2017.It's been a gratifying journey (and a neverending one). It scratches my itches for challenge, creativity,
-        and problem solving.<br><br>Here's a selection of websites that I've worked on over the years!</p>
+        and problem solving.<br><br>Here's a selection of organizations and websites that I've worked on over the years!
+      </p>
     </div>
 
   </div>
@@ -34,20 +35,14 @@
   for (let x = 0; x < workData.length; x++) {
     let job = workData[x]
     let content = `
-      <div class="row">
-        <div class="col left">
-          <a href="${job.linkURL}">
+      <div class="floatRow">
+        <a href="${job.linkURL}">
           <img src="images/${job.image}" alt="">
         </a>
-        </div>
-        <div class="col right">
-          <p>
-            <h3>
-              <a href="${job.linkURL}">${job.properName} - ${job.year}</a>
-            </h3>
-            ${job.description}
-          </p>
-        </div>
+          <h3>
+            <a href="${job.linkURL}">${job.properName} - ${job.year}</a>
+          </h3>
+          ${job.description}
       </div>
     `
     contentArea.innerHTML += content
