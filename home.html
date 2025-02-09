@@ -1,103 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zintis May - Home</title>
+    <link rel="stylesheet" href="robotoFont.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zintis May - Home</title>
-  <link rel="stylesheet" href="robotoFont.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="index.css">
-</head>
-
-<body class="home">
-  <div class="contentArea" id="contentArea">
-    <div class="headshot" id="headshot"></div>
-    <div class="">
-      <h1>Zintis May</h1>
-      <p>
-        <a href="work.html">Programmer</a>
-        <br>
-        <br>
-        <a href="work.html">Teacher</a>
-        <br>
-        <br>
-        <a href="work.html">Game Designer</a>
-      </p>
-      <div id="links"></div>
+  <body class="home">
+    <div class="contentArea" id="contentArea">
+      <div class="headshot" id="headshot"></div>
+      <div class="">
+        <h1>Zintis May</h1>
+        <p>
+          <a href="work.html">Programmer</a>
+          <br />
+          <br />
+          <a href="teaching.html">Teacher</a>
+          <br />
+          <br />
+          <a href="games.html">Game Designer</a>
+        </p>
+        <div id="links"></div>
+      </div>
     </div>
-  </div>
-</body>
-<script src="addMenu.js"></script>
-<script>
-  // buildMenu(document.getElementById("links"));
-</script>
-<script>
+  </body>
+  <script src="addMenu.js"></script>
+  <script>
+    // buildMenu(document.getElementById("links"));
+  </script>
+  <script>
+    let blueSquareArray = createShapes(10);
+    let contentArea = document.getElementById("contentArea");
+    blueSquareArray.forEach((tri) => {
+      contentArea.appendChild(tri);
+    });
 
-  let blueSquareArray = createShapes(10)
-  let contentArea = document.getElementById("contentArea")
-  blueSquareArray.forEach(tri => {
-    contentArea.appendChild(tri)
-  })
+    function rand(min, max) {
+      return min + Math.floor(Math.random() * Math.floor(max - min + 1));
+    }
 
-  function rand(min, max) {
-    return min + Math.floor(Math.random() * Math.floor(max - min + 1));
-  }
-
-  function weightedRand(min, max, goHi, iterations) {
-    var numToReturn = max;
-    for (var k = 0; k < iterations; k++) {
-      var randomNumber = rand(min, max);
-      if (goHi && randomNumber > numToReturn) {
-        numToReturn = randomNumber
-      } else if (!goHi && randomNumber < numToReturn) {
-        numToReturn = randomNumber
+    function weightedRand(min, max, goHi, iterations) {
+      var numToReturn = max;
+      for (var k = 0; k < iterations; k++) {
+        var randomNumber = rand(min, max);
+        if (goHi && randomNumber > numToReturn) {
+          numToReturn = randomNumber;
+        } else if (!goHi && randomNumber < numToReturn) {
+          numToReturn = randomNumber;
+        }
       }
+      return numToReturn;
     }
-    return numToReturn;
-  }
 
-  function makeRandomBlueSquare(i, distanceFromTB, distanceFromLR) {
-    var heightWidth = rand(50, 100);
-    let tri = document.createElement("div")
-    tri.classList.add("blueSquare")
-    tri.style.zIndex = 0
-    tri.style.top = rand(distanceFromTB.lo, distanceFromTB.hi) + "%"
-    tri.style.left = rand(distanceFromLR.lo, distanceFromLR.hi) + "%"
-    tri.style.height = heightWidth + "px"
-    tri.style.width = heightWidth + "px"
-    tri.style.opacity = weightedRand(10, 70, false, 3) / 100
+    function makeRandomBlueSquare(i, distanceFromTB, distanceFromLR) {
+      var heightWidth = rand(50, 100);
+      let tri = document.createElement("div");
+      tri.classList.add("blueSquare");
+      tri.style.zIndex = 0;
+      tri.style.top = rand(distanceFromTB.lo, distanceFromTB.hi) + "%";
+      tri.style.left = rand(distanceFromLR.lo, distanceFromLR.hi) + "%";
+      tri.style.height = heightWidth + "px";
+      tri.style.width = heightWidth + "px";
+      tri.style.opacity = weightedRand(10, 70, false, 3) / 100;
 
-    return tri
-  }
-
-  function createShapes(amount) {
-    //Version 1 sides
-    var blueSquareArray = []
-    // left
-    for (var x = 0; x < amount; x++) {
-      blueSquareArray.push(makeRandomBlueSquare(x, { lo: 15, hi: 100 }, { lo: -3, hi: 3 }))
+      return tri;
     }
-    // right
-    for (var y = 0; y < amount; y++) {
-      blueSquareArray.push(makeRandomBlueSquare(x, { lo: 15, hi: 100 }, { lo: 97, hi: 103 }))
-    }
-    // top
-    for (var z = 0; z < amount; z++) {
-      blueSquareArray.push(makeRandomBlueSquare(x, { lo: -3, hi: 5 }, { lo: 10, hi: 90 }))
-    }
-    // bottom
-    for (var q = 0; q < amount; q++) {
-      blueSquareArray.push(makeRandomBlueSquare(x, { lo: 97, hi: 103 }, { lo: -10, hi: 100 }))
-    }
-    return blueSquareArray
-  }
 
-
-</script>
-
+    function createShapes(amount) {
+      //Version 1 sides
+      var blueSquareArray = [];
+      // left
+      for (var x = 0; x < amount; x++) {
+        blueSquareArray.push(
+          makeRandomBlueSquare(x, { lo: 15, hi: 100 }, { lo: -3, hi: 3 })
+        );
+      }
+      // right
+      for (var y = 0; y < amount; y++) {
+        blueSquareArray.push(
+          makeRandomBlueSquare(x, { lo: 15, hi: 100 }, { lo: 97, hi: 103 })
+        );
+      }
+      // top
+      for (var z = 0; z < amount; z++) {
+        blueSquareArray.push(
+          makeRandomBlueSquare(x, { lo: -3, hi: 5 }, { lo: 10, hi: 90 })
+        );
+      }
+      // bottom
+      for (var q = 0; q < amount; q++) {
+        blueSquareArray.push(
+          makeRandomBlueSquare(x, { lo: 97, hi: 103 }, { lo: -10, hi: 100 })
+        );
+      }
+      return blueSquareArray;
+    }
+  </script>
 </html>
